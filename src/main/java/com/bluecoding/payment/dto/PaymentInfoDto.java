@@ -1,5 +1,6 @@
 package com.bluecoding.payment.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -8,6 +9,7 @@ import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Data
+@Builder
 public class PaymentInfoDto {
     @NotBlank(message = "Card holder name is required")
     private String cardName;

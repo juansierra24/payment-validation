@@ -32,10 +32,11 @@ class InfoValidationServiceImplTest {
         String cardNumber = "1234567890";
         String cvv = "123";
         LocalDate expirationDate = LocalDate.now();
-        PaymentInfoDto paymentInfo = new PaymentInfoDto();
-        paymentInfo.setExpirationDate(expirationDate);
-        paymentInfo.setCvv(cvv);
-        paymentInfo.setCardNumber(cardNumber);
+        PaymentInfoDto paymentInfo = PaymentInfoDto.builder()
+                .expirationDate(expirationDate)
+                .cvv(cvv)
+                .cardNumber(cardNumber)
+                .build();
 
         // Call the method to be tested
         boolean result = infoValidationService.validatePaymentInfo(paymentInfo);
