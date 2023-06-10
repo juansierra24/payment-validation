@@ -1,0 +1,9 @@
+version: '3'
+services:
+  payment-ms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: payment-ms:latest
+    ports:
+      - 8080:8080
